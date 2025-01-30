@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Meta Básico -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foco Intensivo - EAM/CFN | Prof. Rodrigo Dutra</title>
+
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="Curso de Matemática voltado para os concursos de Escola de Aprendizes de Marinheiro e Corpo de Fuzileiros Navais. Aulas ao vivo e gravadas, simulados, listas de exercícios e muito mais!"
+  />
+  <meta
+    property="og:title"
+    content="Foco Intensivo - EAM/CFN | Prof. Rodrigo Dutra"
+  />
+  <meta
+    property="og:description"
+    content="Curso de Matemática voltado para a Marinha. Aulas ao vivo, simulados inéditos e todo o conteúdo para você ser aprovado!"
+  />
+  <meta property="og:image" content="URL_DA_IMAGEM_DE_DESTAQUE"/>
+  <meta property="og:url" content="URL_DA_SUA_PAGINA"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="imgs/NAV.png" type="image/x-icon"/>
+
+  <!-- CSS Libraries -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8/swiper-bundle.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Custom CSS -->
+  <style>
+    /* --------------------------------------------------------
+       VARIÁVEIS E ESTILOS GERAIS
+    -------------------------------------------------------- */
+    :root {
+      --color1: #004aad;   /* azul primário */
+      --color2: #00ddc1;   /* ciano esverdeado */
+      --color3: #f3f3f3;   /* cor clara de fundo */
+      --color-dark: #222;  /* fundo escuro */
+      --gradient-title: linear-gradient(90deg, #ff6b6b, #ffd93d);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    /* Barra de aviso no topo */
+    .top-bar {
+      background: linear-gradient(90deg, var(--color1), var(--color2));
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      padding: 1rem 0;
+      background: linear-gradient(90deg, var(--color1), var(--color2)); /* Já inicia colorida */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(0, 74, 173, 0.9);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      width: 50px;
+      margin-right: 0.5rem;
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+      margin-right: 1rem;
+      transition: color 0.3s;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--color2);
+    }
+    .navbar-toggler {
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      background: none;
+    }
+
+    /* Header/Hero */
+    header {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; 
+      color: #fff;
+      background: none;
+    }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 221, 193, 0.3);
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero-content h1 strong {
+      background: #fff;
+      color: var(--color1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      font-weight: 700;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-hero {
+      border: none;
+      border-radius: 30px;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #fff;
+      color: var(--color1);
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-hero:hover {
+      background-color: var(--color2);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    /* Waves */
+    .wave {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+    }
+    .wave .shape-fill {
+      fill: #fff;
+    }
+    .wave-top {
+      top: -80px;
+      transform: rotate(180deg);
+    }
+    .wave-bottom {
+      bottom: 0;
+    }
+    .wave-about-top .shape-fill { fill: #f9f9f9; }
+    .wave-testimonials-top .shape-fill { fill: #fff; }
+    .wave-youtube-top .shape-fill { fill: #fefefe; }
+    .wave-cta-top .shape-fill { fill: #004aad; }
+    /* Botão Flutuante WhatsApp (melhorado) */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .whatsapp-float:hover {
+      background-color: #2ecc71;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    /* Seção: Curso */
+    section#courses {
+      position: relative;
+      padding: 6rem 1rem;
+      background-color: #fefefe;
+    }
+    .course-section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+      background: var(--gradient-title); 
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1)
+      );
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 25px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      position: relative;
+    }
+    .glass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+    .glass-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .glass-card .card-body {
+      padding: 2.5rem;
+      text-align: center;
+      color: #000;
+    }
+    .course-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .card-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .course-conteudo {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    .course-conteudo p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+    .course-conteudo p i {
+      color: var(--color1);
+      font-size: 1.2rem;
+    }
+    .course-price {
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      color: #000;
+    }
+    .old-price {
+      color: #ff0000;
+      text-decoration: line-through;
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+    .new-price {
+      color: #50ffca;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+    .btn-saiba-mais {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--color1), var(--color2));
+      color: #fff;
+      border-radius: 30px;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .btn-saiba-mais:hover {
+      background: linear-gradient(45deg, var(--color2), var(--color1));
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Bloco "Preparação direcionada para" */
+    .marinha-logos {
+      margin-top: 3rem;
+      padding: 2.5rem 1.5rem;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .marinha-logos:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .marinha-logos p {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      color: #333333;
+    }
+
+    .logos-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-item img {
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-item span {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      color: #555555;
+      font-weight: 500;
+    }
+
+    .logo-item:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Seção: Sobre o Professor */
+    section#about {
+      padding: 4rem 1rem;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+    #about .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-image,
+    .about-text {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+    .professor-img-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+    .professor-img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .professor-img:hover {
+      transform: scale(1.05);
+    }
+    .about-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .stat-card i {
+      font-size: 2rem;
+      color: var(--color1);
+    }
+    .stat-number {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-right: 0.2rem;
+    }
+    .btn-primary-about {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--color1), var(--color2));
+      color: #fff;
+      border-radius: 30px;
+      padding: 0.8rem 1.5rem;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+      margin-top: 2rem;
+    }
+    .btn-primary-about:hover {
+      background: linear-gradient(45deg, var(--color2), var(--color1));
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    /* Seção: Depoimentos */
+    section#testimonials {
+      padding: 4rem 1rem;
+      background-color: #fff;
+      position: relative;
+    }
+    #testimonials .section-title {
+      margin-bottom: 1rem;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      font-size: 2.2rem;
+    }
+    #testimonials p {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+      color: #555;
+    }
+    
+    /* Estilos para os cartões de depoimento */
+    .testimonial-card {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .testimonial-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .testimonial-content img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color1);
+    }
+    .testimonial-content strong {
+      font-size: 1rem;
+      color: var(--color1);
+    }
+    .testimonial-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #666;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .testimonial-text::before {
+      content: "“";
+      font-size: 2rem;
+      color: var(--color1);
+      position: absolute;
+      left: 0;
+      top: -10px;
+    }
+
+    /* Seção: Conversas de Alunos */
+    section#conversations {
+      padding: 4rem 1rem;
+      background-color: #f3f3f3;
+      position: relative;
+    }
+
+    #conversations .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #conversations p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      color: #555;
+    }
+
+    .conversation-card img {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .conversation-card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modais */
+    .modal-content {
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-body img {
+      border-radius: 10px;
+    }
+
+    /* Seção: YouTube */
+    section#youtube {
+      position: relative;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    #youtube iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 177.77vh;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    #youtube .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(5px);
+      z-index: 2;
+      animation: shimmer 5s linear infinite;
+    }
+    @keyframes shimmer {
+      0%   { background: rgba(0, 0, 0, 0.65); }
+      50%  { background: rgba(0, 0, 0, 0.7);  }
+      100% { background: rgba(0, 0, 0, 0.65); }
+    }
+    #youtube .content {
+      position: relative;
+      z-index: 3;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #youtube h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--color1), var(--color2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+    #youtube h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 50px;
+      height: 4px;
+      background: var(--color2);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    #youtube p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #ffccc7;
+    }
+    #youtube .btn {
+      background: #e74c3c;
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    #youtube .btn:hover {
+      box-shadow: 0 0 25px rgba(255, 255, 254, 0.7);
+    }
+
+    /* Seção: CTA */
+    .cta {
+      background: linear-gradient(90deg, var(--color1), var(--color2));
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      max-width: 600px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .cta .btn {
+      background-color: #fff;
+      color: var(--color1);
+      margin-top: 2rem;
+      border-radius: 30px;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .cta .btn:hover {
+      background-color: var(--color2);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    .social-icons a {
+      color: #ccc;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    .developed-by p {
+      font-size: 0.85rem;
+    }
+    /* Aumenta a logo no final */
+    .developed-by img {
+      height: 35px;
+      vertical-align: middle;
+      margin-left: 0.3rem;
+    }
+
+    /* Seção: Conversas de Alunos */
+    section#conversations {
+      padding: 4rem 1rem;
+      background-color: #f3f3f3;
+      position: relative;
+    }
+
+    #conversations .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #conversations p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      color: #555;
+    }
+
+    .conversation-card img {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .conversation-card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modais */
+    .modal-content {
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-body img {
+      border-radius: 10px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+      .stats {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .hero-content p {
+        font-size: 0.95rem;
+      }
+      .btn-hero {
+        padding: 0.6rem 1.4rem;
+      }
+      .glass-card .card-body {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOPO: AVISO -->
+  <div class="top-bar" role="banner" aria-label="Aviso Importante">
+    <i class="fas fa-exclamation-triangle"></i>
+    Últimos dias para garantir sua vaga no Foco Intensivo - EAM/CFN!
+  </div>
+
+  <!-- NAVBAR (STICKY) -->
+  <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Navegação Principal">
+    <div class="container">
+      <a class="navbar-brand" href="#home" aria-label="Página Inicial">
+        Prof. Rodrigo Dutra
+      </a>
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Alternar navegação"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#courses">Curso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Depoimentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#youtube">YouTube</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO -->
+  <header id="home">
+    <!-- Vídeo de Fundo -->
+    <video 
+      class="video-bg" 
+      src="imgs/bg-video2.mp4" 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+    ></video>
+    <!-- Overlay Esverdeado -->
+    <div class="header-overlay"></div>
+    <!-- Conteúdo do Header -->
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Foco Intensivo <strong>EAM/CFN</strong></h1>
+      <p>
+        Curso de Matemática voltado para os concursos de Escola de Aprendizes de Marinheiro e
+        Corpo de Fuzileiros Navais. Aulas ao vivo, gravadas, simulados inéditos e muito mais!
+      </p>
+      <a
+        href="#courses"
+        class="btn-hero"
+        role="button"
+        aria-label="Ir para Curso"
+      >
+        <i class="fas fa-book-open"></i> Comece Agora
+      </a>
+    </div>
+    <!-- Wave no final do Header -->
+    <div class="wave wave-bottom">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M985.66,22.38c-40.22,4.15-80.43,11.3-120.66,9.13
+             -51.81-2.58-103.09-13.77-154.9-21.68C629.92,0,578.64,0,526.87,0
+             S423.82,0,371.89,0C329.37,0,286.86,0,244.34,0H0V120H1200V0
+             h-51.76C1122.91,6.2,1063.24,16.56,985.66,22.38Z"
+          class="shape-fill"
+        ></path>
+      </svg>
+    </div>
+  </header>
+  <!-- Fim do HEADER -->
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a
+    href="https://wa.me/5521976272621"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Fale conosco pelo WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- SEÇÃO: CURSO -->
+  <section id="courses" aria-labelledby="cursos">
+    <!-- Wave no topo -->
+    <div class="wave wave-top">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M985.66,22.38c-40.22,4.15-80.43,11.3-120.66,9.13
+             -51.81-2.58-103.09-13.77-154.9-21.68C629.92,0,578.64,0,526.87,0
+             S423.82,0,371.89,0C329.37,0,286.86,0,244.34,0H0V120H1200V0
+             h-51.76C1122.91,6.2,1063.24,16.56,985.66,22.38Z"
+          class="shape-fill"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <h2 id="cursos" class="course-section-title" data-aos="fade-up">
+        Nosso Curso em Destaque
+      </h2>
+
+      <!-- Cartão em Vidro (Glass) -->
+      <div class="glass-card" data-aos="zoom-in" data-aos-delay="100">
+        <img
+          src="imgs/você terá.png"
+          class="card-img-top"
+          alt="Capa do curso"
+          loading="lazy"
+        />
+        <div class="card-body">
+          <span class="course-badge">Oferta Exclusiva!</span>
+          <h5 class="card-title">Foco Intensivo - EAM/CFN</h5>
+          <div class="course-conteudo">
+            <p><i class="fas fa-check-circle"></i> Curso Completo de Matemática para EAM e CFN</p>
+            <p><i class="fas fa-video"></i> Aulas ao Vivo e Gravadas</p>
+            <p><i class="fas fa-clipboard-list"></i> Simulados Exclusivos</p>
+            <p><i class="fas fa-headset"></i> Suporte Contínuo</p>
+          </div>
+          <p class="course-price">
+            <span class="old-price">R$ 397,00</span>
+            <span class="new-price">R$ 199,00</span>
+          </p>
+          <a
+            href="https://pay.kiwify.com.br/dDI6i9F"
+            class="btn-saiba-mais"
+            role="button"
+            aria-label="Saiba Mais"
+          >
+            <i class="fas fa-info-circle"></i> Saiba Mais
+          </a>
+        </div>
+      </div>
+      <!-- Bloco para "Preparação direcionada para" -->
+      <div class="marinha-logos text-center" data-aos="fade-up" data-aos-delay="150">
+        <p>Preparação direcionada para:</p>
+        <div class="logos-container">
+          <div class="logo-item">
+            <img 
+              src="imgs/7ca67e25-dd0b-4ae6-b54a-7b444dfea223-removebg-preview.png"
+              alt="Logo do Corpo de Fuzileiros Navais"
+              loading="lazy"
+            />
+            <span>Corpo de Fuzileiros Navais</span>
+          </div>
+          <div class="logo-item">
+            <img 
+              src="imgs/f0c3817a-1a23-4a54-ae0d-d08bebecd50c-removebg-preview.png"
+              alt="Logo da Marinha do Brasil"
+              loading="lazy"
+            />
+            <span>Marinha do Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: SOBRE O PROFESSOR -->
+  <section id="about" aria-labelledby="sobre-o-professor">
+    <div class="container">
+      <h2 id="sobre-o-professor" class="section-title" data-aos="fade-up">
+        Sobre o Prof. Rodrigo Dutra
+      </h2>
+      <div class="about-wrapper">
+        <div
+          class="about-image"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          <div class="professor-img-container">
+            <img
+              src="imgs/professor.png"
+              alt="Foto do Professor Rodrigo Dutra"
+              class="professor-img"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div
+          class="about-text"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <p>
+            O Prof. Rodrigo Dutra é especialista em concursos
+            militares, com vasta experiência na preparação de
+            candidatos para a Escola de Aprendizes de Marinheiro
+            (EAM) e Corpo de Fuzileiros Navais (CFN). Suas aulas são
+            focadas em Matemática, sempre de forma dinâmica e objetiva,
+            facilitando a compreensão até dos tópicos mais complexos.
+          </p>
+          <p>
+            Além das aulas ao vivo e gravadas, você terá acesso a um
+            suporte contínuo, simulados exclusivos e correções
+            detalhadas. Tudo para que você chegue confiante e bem
+            preparado no dia da prova.
+          </p>
+          <div class="stats" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-card">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <div class="stat-info">
+                <span
+                  class="stat-number"
+                  data-count="10"
+                  data-prefix="+"
+                  >0</span>
+                <p>Anos de Experiência</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-user-graduate"></i>
+              <div class="stat-info">
+                <span
+                  class="stat-number"
+                  data-count="5000"
+                  data-format="mil"
+                  data-prefix="+"
+                  >0</span>
+                <p>Alunos Preparados</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a
+              href="#courses"
+              class="btn-primary-about"
+              role="button"
+              aria-label="Inscreva-se Agora"
+            >
+              <i class="fas fa-paper-plane me-2"></i>Inscreva-se Agora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: DEPOIMENTOS -->
+  <section id="testimonials" aria-labelledby="depoimentos-dos-alunos">
+    <div class="container">
+      <h2 id="depoimentos-dos-alunos" class="section-title" data-aos="fade-up">
+        Depoimentos de Alunos
+      </h2>
+      <p data-aos="fade-up">
+        Veja o que alguns alunos comentam sobre o método do professor.
+      </p>
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <!-- Depoimento 1 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <img
+                src="imgs/cases/case1.jpg"
+                alt="Foto da aluna Letícia"
+                loading="lazy"
+              />
+              <strong>Guto Souza </strong>
+            </div>
+            <p class="testimonial-text">
+              "Graças às aulas do professor Rodrigo, consegui entender a
+              matéria de forma simples e fui muito bem nos simulados para a EAM."
+            </p>
+          </div>
+        </div>
+        <!-- Depoimento 2 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <img
+                src="imgs/cases/case2.jpg"
+                alt="Foto do aluno Marcos"
+                loading="lazy"
+              />
+              <strong>Edson Lucas</strong>
+            </div>
+            <p class="testimonial-text">
+              "A didática do professor é incrível. Hoje sinto que estou
+              muito mais confiante para encarar a prova da CFN."
+            </p>
+          </div>
+        </div>
+        <!-- Depoimento 4 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <img
+                src="imgs/cases/case4.jpg"
+                alt="Foto do aluno João"
+                loading="lazy"
+              />
+              <strong>Kaique Correa</strong>
+            </div>
+            <p class="testimonial-text">
+              "O suporte contínuo me ajudou a superar minhas dificuldades e alcançar a aprovação."
+            </p>
+          </div>
+        </div>
+        <!-- Depoimento 6 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <img
+                src="imgs/cases/case6.jpg"
+                alt="Foto do aluno Carlos"
+                loading="lazy"
+              />
+              <strong>Rayssa Lorrany</strong>
+            </div>
+            <p class="testimonial-text">
+              "Os simulados exclusivos me prepararam perfeitamente para o dia da prova."
+            </p>
+          </div>
+        </div>
+        <!-- Depoimento 7 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <img
+                src="imgs/cases/case7.jpg"
+                alt="Foto da aluna Beatriz"
+                loading="lazy"
+              />
+              <strong>Kristal Izabela</strong>
+            </div>
+            <p class="testimonial-text">
+              "A metodologia do professor Rodrigo é realmente eficiente e eficaz."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: CONVERSAS DE ALUNOS -->
+  <section id="conversations" aria-labelledby="conversas-de-alunos">
+    <div class="container">
+      <h2 id="conversas-de-alunos" class="section-title" data-aos="fade-up">
+        Conversas de Alunos
+      </h2>
+      <p data-aos="fade-up">
+        Veja como nossos alunos interagem e compartilham suas experiências.
+      </p>
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <!-- Conversa 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="conversation-card">
+            <img
+              src="imgs/conv.jpg"
+              alt="Print de conversa da aluna Letícia"
+              class="img-fluid rounded shadow-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#conversationModal1"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Conversa 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="conversation-card">
+            <img
+              src="imgs/conv2.jpg"
+              alt="Print de conversa do aluno Marcos"
+              class="img-fluid rounded shadow-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#conversationModal2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Conversa 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="conversation-card">
+            <img
+              src="imgs/conv3.jpg"
+              alt="Print de conversa da aluna Miriam"
+              class="img-fluid rounded shadow-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#conversationModal3"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Conversa 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="conversation-card">
+            <img
+              src="imgs/conv4.jpg"
+              alt="Print de conversa do aluno João"
+              class="img-fluid rounded shadow-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#conversationModal4"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modais para Conversas -->
+    
+    <!-- Modal 1 -->
+    <div
+      class="modal fade"
+      id="conversationModal1"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel1">Conversa da Letícia</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo1.jpg"
+              alt="Print de conversa da aluna Letícia"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div
+      class="modal fade"
+      id="conversationModal2"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel2">Conversa do Marcos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo2.jpg"
+              alt="Print de conversa do aluno Marcos"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div
+      class="modal fade"
+      id="conversationModal3"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel3">Conversa da Miriam</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo3.png"
+              alt="Print de conversa da aluna Miriam"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div
+      class="modal fade"
+      id="conversationModal4"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel4"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel4">Conversa do João</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo4.jpg"
+              alt="Print de conversa do aluno João"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div
+      class="modal fade"
+      id="conversationModal5"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel5"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel5">Conversa da Ana</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo5.jpg"
+              alt="Print de conversa da aluna Ana"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div
+      class="modal fade"
+      id="conversationModal6"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel6"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel6">Conversa do Carlos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo6.jpg"
+              alt="Print de conversa do aluno Carlos"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div
+      class="modal fade"
+      id="conversationModal7"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel7"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel7">Conversa da Beatriz</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo7.jpg"
+              alt="Print de conversa da aluna Beatriz"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div
+      class="modal fade"
+      id="conversationModal8"
+      tabindex="-1"
+      aria-labelledby="conversationModalLabel8"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conversationModalLabel8">Conversa do Rafael</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="imgs/conversations/convo8.jpg"
+              alt="Print de conversa do aluno Rafael"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: YOUTUBE -->
+  <section id="youtube" aria-labelledby="youtube-section">
+    <div class="video-background">
+      <iframe
+        width="1280"
+        height="720"
+        src="https://www.youtube.com/embed/HpmrMRVvXhE"
+        title="(EAM) COSSENO DE 1935º ???!!"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="content" data-aos="fade-up">
+      <h2 id="youtube-section">Conheça nosso Canal no YouTube</h2>
+      <p>Assista a aulas, dicas e conteúdos gratuitos.</p>
+      <a 
+        href="https://www.youtube.com/@profrodrigodutra" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="btn btn-danger" 
+        role="button" 
+        aria-label="Visitar canal no YouTube"
+      >
+          <i class="fas fa-play me-2"></i>Visitar Canal
+      </a>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: CTA -->
+  <section class="cta" aria-labelledby="call-to-action">
+    <div class="wave wave-top wave-cta-top">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M985.66,22.38c-40.22,4.15-80.43,11.3-120.66,9.13
+             -51.81-2.58-103.09-13.77-154.9-21.68C629.92,0,578.64,0,526.87,0
+             S423.82,0,371.89,0C329.37,0,286.86,0,244.34,0H0V120H1200V0
+             h-51.76C1122.91,6.2,1063.24,16.56,985.66,22.38Z"
+          class="shape-fill"
+        ></path>
+      </svg>
+    </div>
+    <div class="container">
+      <h2 id="call-to-action" data-aos="fade-up">
+        Pronto para Conquistar a Aprovação na Marinha?
+      </h2>
+      <p data-aos="fade-up">
+        Garanta agora sua vaga no <strong>Foco Intensivo - EAM/CFN</strong>
+        e tenha acesso a um método eficiente de estudos para a prova.
+        Não deixe para depois!
+      </p>
+      <a
+        href="#courses"
+        class="btn"
+        data-aos="zoom-in"
+        role="button"
+        aria-label="Inscreva-se Agora"
+      >
+        <i class="fas fa-paper-plane"></i> Inscreva-se Já
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" aria-labelledby="contato">
+    <div class="container">
+      <p id="contato">
+        <strong>Entre em contato:</strong> contato@profrodrigodutra.com
+      </p>
+      <p>&copy; 2025 Prof. Rodrigo Dutra. Todos os direitos reservados.</p>
+      <p>
+        <a href="#politica-cookies">Política de Cookies</a> |
+        <a href="#politica-privacidade">Política de Privacidade</a>
+      </p>
+      <div class="social-icons mt-3">
+        <a
+          target="_blank"
+          href="https://www.youtube.com/@profrodrigodutra"
+          aria-label="YouTube"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.instagram.com/profrodrigodutra/"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.tiktok.com/@profrodrigodutra"
+          aria-label="TikTok"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://linktr.ee/profrodrigodutra"
+          aria-label="Linktree"
+        >
+          <i class="fas fa-link"></i>
+        </a>
+      </div>
+      <div class="developed-by mt-4">
+        <p>
+          <a
+            href="https://innovaxhouse.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visite o site do desenvolvedor"
+          >
+            <span>
+              Desenvolvido com
+              <i class="fas fa-heart" style="color: var(--color2);"></i>
+              por
+            </span>
+            <img
+              src="imgs/innovax.png"
+              alt="Logo da Innovax House"
+              loading="lazy"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS: Bootstrap e Outros -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8/swiper-bundle.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Inicializa AOS (Animações de Scroll)
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // Rolagem suave para links internos
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function(e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            const offset = target.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({
+              top: offset,
+              behavior: "smooth",
+            });
+            // Fecha o menu mobile se estiver aberto
+            const navbarToggler = document.querySelector(".navbar-toggler");
+            const navbarCollapse = document.querySelector(".navbar-collapse");
+            if (navbarCollapse.classList.contains("show")) {
+              navbarToggler.click();
+            }
+          }
+        });
+      });
+
+      // Animação dos Contadores (Seção "Sobre")
+      const countUp = (counter) => {
+        const target = parseInt(counter.getAttribute("data-count"), 10);
+        const prefix = counter.getAttribute("data-prefix") || "";
+        const format = counter.getAttribute("data-format");
+        let suffix = "";
+        let finalValue = target;
+
+        // Caso data-format="mil"
+        if (format === "mil") {
+          finalValue = target / 1000;
+          suffix = "mil";
+        }
+
+        let current = 0;
+        const duration = 3000;
+        const startTime = performance.now();
+
+        const animate = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          current = Math.floor(progress * finalValue);
+
+          if (format === "mil") {
+            counter.innerText = prefix + current + suffix;
+          } else {
+            counter.innerText = prefix + current;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        };
+        requestAnimationFrame(animate);
+      };
+
+      const statsCounters = document.querySelectorAll(".stat-number[data-count]");
+      let countersStarted = false;
+      const aboutSection = document.getElementById("about");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !countersStarted) {
+              statsCounters.forEach((counter) => countUp(counter));
+              countersStarted = true;
+              observer.unobserve(aboutSection);
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(aboutSection);
+      } else {
+        // Fallback se IntersectionObserver não for suportado
+        statsCounters.forEach((counter) => countUp(counter));
+      }
+
+      // Efeito de scroll na Navbar
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Inicializa o Swiper para Depoimentos
+      var testimonialsSwiper = new Swiper('.testimonials-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: '.testimonials-swiper .swiper-button-next',
+          prevEl: '.testimonials-swiper .swiper-button-prev',
+        },
+        pagination: {
+          el: '.testimonials-swiper .swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    });
+  </script>
+</body>
+</html>
