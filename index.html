@@ -863,6 +863,39 @@
         padding: 1.5rem;
       }
     }
+    .video-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  /* Botão de Play Personalizado */
+  .custom-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    z-index: 2;
+  }
+
+  .custom-play-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  /* Esconde o botão quando o vídeo começa */
+  .playing .custom-play-btn {
+    display: none;
+  }
   </style>
 </head>
 <body>
@@ -1051,7 +1084,6 @@
       </div>
     </div>
   </section>
-
   <!-- SEÇÃO: SOBRE O PROFESSOR -->
   <section id="about" aria-labelledby="sobre-o-professor">
     <div class="container">
@@ -1131,7 +1163,27 @@
       </div>
     </div>
   </section>
-
+  <section id="video-destaque" aria-labelledby="video-destaque-section" style="background-color: #fff; padding: 50px 0;">
+    <div class="container text-center">
+      <h2 id="video-destaque-section" class="section-title" data-aos="fade-up">
+        Assista ao Depoimento do Aluno
+      </h2>
+      <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        Confira este depoimento inspirador e descubra como nosso curso transformou a vida deste aluno.
+      </p>
+      <div class="video-container position-relative d-inline-block" data-aos="zoom-in" data-aos-delay="200">
+        <div class="ratio ratio-16x9">
+          <video id="custom-video" class="rounded" style="width: 100%; border: 5px solid #ddd; display: block;" poster="imgs/thumb.jpg">
+            <source src="imgs/video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+        </div>
+        <button id="play-button" class="custom-play-btn">
+          ▶
+        </button>
+      </div>
+    </div>
+  </section>
   <!-- SEÇÃO: DEPOIMENTOS -->
   <section id="testimonials" aria-labelledby="depoimentos-dos-alunos">
     <div class="container">
@@ -1784,6 +1836,28 @@
         },
       });
     });
+    document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("custom-video");
+    const playButton = document.getElementById("play-button");
+
+    playButton.addEventListener("click", function() {
+      if (video.paused) {
+        video.play();
+        playButton.classList.add("playing");
+      } else {
+        video.pause();
+        playButton.classList.remove("playing");
+      }
+    });
+
+    video.addEventListener("play", function() {
+      playButton.classList.add("playing");
+    });
+
+    video.addEventListener("pause", function() {
+      playButton.classList.remove("playing");
+    });
+  });
   </script>
 </body>
 </html>
