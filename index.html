@@ -862,40 +862,68 @@
       .glass-card .card-body {
         padding: 1.5rem;
       }
-    }
-    .video-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 800px;
-  }
+    }.video-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-  /* Botão de Play Personalizado */
+/* Botão de Play Personalizado */
+.custom-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: #e60023;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito hover */
+.custom-play-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Esconde o botão quando o vídeo começa */
+.playing .custom-play-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
   .custom-play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    z-index: 2;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 
-  .custom-play-btn:hover {
-    background: rgba(0, 0, 0, 0.9);
+  .video-container {
+    max-width: 100%;
+    border-radius: 8px;
   }
+}
 
-  /* Esconde o botão quando o vídeo começa */
-  .playing .custom-play-btn {
-    display: none;
-  }
   </style>
 </head>
 <body>
